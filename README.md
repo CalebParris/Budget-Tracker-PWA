@@ -1,4 +1,4 @@
-# Budget-Tracker-PWA
+# Budget Tracker PWA
 
    [![Github](https://img.shields.io/badge/License-MIT-brightgreen)](#License)
 
