@@ -1,19 +1,15 @@
 // Variables to be used in the service worker
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
-
-const iconSizes = ["192", "512"];
-const iconFiles = iconSizes.map((size) => `/icons/icon-${size}x${size}.png`);
-
 const staticFilesToPreCache = [
     "/",
-    "/index.html",
-    "/index.js",
-    "/manifest.webmanifest",
-    "/styles.css",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png"
-].concat(iconFiles);
+    "./index.html",
+    "./index.js",
+    "./manifest.webmanifest",
+    "./styles.css",
+    "./icons/icon-192x192.png",
+    "./icons/icon-512x512.png"
+];
 
 // Install Listener
 self.addEventListener("install", (event) => {
