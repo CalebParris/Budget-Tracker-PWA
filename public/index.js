@@ -1,6 +1,20 @@
 let transactions = [];
 let myChart;
 
+// registration for service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js").then(reg => {
+      console.log("We found your service worker file!", reg);
+    })
+    .catch((err) => {
+      console.log("We were unable to find your service worker file", err);
+    });
+  });
+} else {
+  console.log("Application does not support Service Worker");
+}
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
