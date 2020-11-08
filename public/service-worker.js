@@ -7,8 +7,12 @@ const iconFiles = iconSizes.map((size) => `/icons/icon-${size}x${size}.png`);
 
 const staticFilesToPreCache = [
     "/",
+    "/index.html",
     "/index.js",
-    "/manifest.webmanifest"
+    "/manifest.webmanifest",
+    "/styles.css",
+    "/icons/icon-192x192.png",
+    "/icons/icon-512x512.png"
 ].concat(iconFiles);
 
 // Install Listener
