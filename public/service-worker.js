@@ -23,5 +23,20 @@ self.addEventListener("install", (event) => {
 });
 
 // Activate Listener
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(
+                keyList.map((key) => {
+                    if (key !== CACHE_NAME && key !== DATA_CACHE_NAME){
+                        console.log("ROemoving old cache data", key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+    self.clients.claim();
+});
 
 // Fetch Listener
